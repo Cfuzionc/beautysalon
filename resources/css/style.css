@@ -376,7 +376,7 @@ section {
     padding: 10px 25px;
     color: #2b2b2b;
     font-weight: 600;
-    background-color: #c29e75;
+    background-color: #c3a98a;
     border: 1px solid transparent;
     border-radius: 0px;
     -webkit-transition: .8s ease !important;
@@ -396,7 +396,7 @@ section {
     padding: 10px 25px;
     color: #2b2b2b;
     font-weight: 600;
-    background-color: #c29e75;
+    background-color: #c3a98a;
     border: 1px solid transparent;
     border-radius: 0px;
     -webkit-transition: .8s ease !important;
@@ -449,7 +449,7 @@ section {
 .black-trans-btn-with-orange-btn:hover {
     color: #ffffff !important;
     ;
-    background-color: #c29e75 !important;
+    background-color: #c3a98a !important;
     border: 1px solid transparent !important;
 }
 
@@ -459,7 +459,7 @@ section {
 
 /* background color */
 .bg-main {
-    background: #c29e75;
+    background: #c3a98a;
 }
 
 .bg-black {
@@ -488,7 +488,7 @@ section {
 
 /* text-color */
 .main-color {
-    color: #c29e75;
+    color: #c3a98a;
 }
 
 /*Max Width*/
@@ -950,7 +950,7 @@ header a.logo img {
     -webkit-transform: scaleX(0);
     -ms-transform: scaleX(0);
     transform: scaleX(0);
-    background: #c29e75;
+    background: #c3a98a;
     visibility: hidden;
     opacity: 0;
 }
@@ -1343,7 +1343,7 @@ header a.logo img {
 .about-list li .a-icon {
     font-size: 25px;
     margin-right: 15px;
-    color: #c29e75;
+    color: #c3a98a;
 }
 
 /* ===================================
@@ -1400,7 +1400,7 @@ header a.logo img {
 }
 
 .prices .price-list {
-    border-bottom: 2px solid #c29e75;
+    border-bottom: 2px solid #c3a98a;
     padding: 25px 16px 25px 12px;
     font-family: 'Open Sans', sans-serif;
     cursor: pointer;
@@ -1462,7 +1462,7 @@ header a.logo img {
 
 .services-skill .progress-bar {
     border-radius: 50px;
-    background-color: #c29e75;
+    background-color: #c3a98a;
 }
 
 .progress-item b {
@@ -1543,11 +1543,11 @@ header a.logo img {
 }
 
 .cube-portfolio1 .cbp-l-filters-button .cbp-filter-item.cbp-filter-item-active {
-    color: #c29e75;
+    color: #c3a98a;
 }
 
 .cube-portfolio1 .cbp-l-filters-button .cbp-filter-item:hover {
-    color: #c29e75;
+    color: #c3a98a;
 }
 
 .cube-portfolio1 .cbp-l-grid-mosaic-flat .cbp-caption-activeWrap {
@@ -1860,7 +1860,7 @@ header a.logo img {
 }
 
 .footer-social li a:hover {
-    background-color: #c29e75;
+    background-color: #c3a98a;
     color: #ffffff;
 }
 
@@ -1878,7 +1878,7 @@ header a.logo img {
     font-size: 23px;
     line-height: 47px;
     color: #2b2b2b;
-    background-color: #c29e75;
+    background-color: #c3a98a;
     display: none;
     height: 45px;
     width: 45px;
@@ -1897,7 +1897,7 @@ header a.logo img {
 }
 
 .scroll-top-arrow:hover {
-    background-color: #c29e75;
+    background-color: #c3a98a;
 }
 
 
@@ -1999,7 +1999,7 @@ header a.logo img {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #c29e75;
+    background-color: #c3a98a;
     animation: cssload-fold-thecube 2.76s infinite linear both;
     -o-animation: cssload-fold-thecube 2.76s infinite linear both;
     -ms-animation: cssload-fold-thecube 2.76s infinite linear both;
@@ -2189,12 +2189,12 @@ header a.logo img {
 }
 
 .standalone-detail .sub-heading {
-    color: #c29e75;
+    color: #c3a98a;
     margin-bottom: 10px;
 }
 
 .standalone-area .sub-heading {
-    color: #c29e75;
+    color: #c3a98a;
     margin-bottom: 8px;
 }
 
@@ -2310,7 +2310,7 @@ header a.logo img {
 
 .page-breadcrumb li a .icon {
     margin-right: 4px;
-    color: #c29e75;
+    color: #c3a98a;
 }
 
 .page-breadcrumb li a:hover {

@@ -5,8 +5,8 @@
         <div class="container">
             <a href="../index-barber.html" title="Logo" class="logo scroll">
                 <!--Logo Default-->
-                <img src="{{ asset('img/Logo2.png') }}" alt="logo" class="logo-white">
-                <img src="{{ asset('img/logo2.png') }}" alt="logo" class="logo-dark">
+                <img src="{{ asset('img/beautysalon.png') }}" alt="logo" class="logo-white">
+                <img src="{{ asset('img/beautysalon.png') }}" alt="logo" class="logo-dark">
             </a>
 
             <!--Nav Links-->

@@ -15,9 +15,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('layout .app');
+    return view('layouts.app');
 });
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::resource('Reservation', App\Http\Controllers\ReservationController::class);

@@ -9,7 +9,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
-    @include('layout.partials.assets')
+    @include('layouts.partials.assets')
 </head>
 <body data-spy="scroll" data-target=".side_menu" data-offset="90">
 
@@ -17,11 +17,11 @@
 
 
 <!-- Preloader -->
-    @include('layout.partials.loader')
+    @include('layouts.partials.loader')
 <!-- Preloader End -->
 
 <!--Header Start-->
-    @include('layout.partials.navigation')
+    @include('layouts.partials.navigation')
 <!--Header End-->
 
 <!--Banner Start-->
@@ -111,7 +111,7 @@
 <!--main page content end-->
 
 <!--Footer Start-->
-    @include('layout.partials.footer')
+    @include('layouts.partials.footer')
 <!--Footer End-->
 
 <!--Scroll Top Start-->
