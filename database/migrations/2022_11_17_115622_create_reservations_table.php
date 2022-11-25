@@ -17,8 +17,9 @@ return new class extends Migration
             $table->uuid('uuid');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('preffered_employee')->nullable();
-            $table->datetime('begin');
-            $table->datetime('end');
+            $table->time('begin');
+            $table->time('end');
+            $table->date('date');
             $table->softDeletes();
             $table->timestamps();
 

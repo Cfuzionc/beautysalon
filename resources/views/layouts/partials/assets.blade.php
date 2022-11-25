@@ -14,6 +14,9 @@
 <link href="http://demo-laravel-appointments.quickadminpanel.com/css/custom.css" rel="stylesheet">
 @vite([
         // SCRIPTS
+        'resources/js/vendor',
+        'resources/js/sb-admin-2.js',
+        'resources/js/sb-admin-2.min.js',
         'resources/js/maps.min.js',
         'resources/js/jquery.themepunch.tools.min.js',
         'resources/js/wow.js',
@@ -94,9 +97,12 @@
     'resources/css/elements.css',
     'resources/css/line-awesome.min.css',
     'resources/css/revolution-settings.min.css',
+    'resources/css/sb-admin-2 2.css',
+    'resources/css/sb-admin-2 3.css',
+    'resources/css/sb-admin-2.css',
+    'resources/css/sb-admin-2.min.css',
 
     //SCSS
     'resources/sass/styles.scss',
-    'resources/sass/app.scss'
-
+    'resources/sass/app.scss',
 ])

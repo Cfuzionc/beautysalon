@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Reservation;
 use Illuminate\Http\Request;
+use Label84\HoursHelper\Facades\HoursHelper;
 
 class ReservationController extends Controller
 {
@@ -24,6 +25,11 @@ class ReservationController extends Controller
      */
     public function create()
     {
+
+        $hours = HoursHelper::create(config('reservation.workhours.begin'), config('reservation.workhours.end'), config('reservation.workhours.appointmenttime'));
+
+        $reservations = Reservation::where('date', '>=', now())->get();
+        // dd($hours, $reservations);
         return view('reservations.create');
     }
 

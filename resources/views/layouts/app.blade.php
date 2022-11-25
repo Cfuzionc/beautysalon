@@ -10,7 +10,9 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
     @include('layouts.partials.assets')
+    @livewireStyles
 </head>
+
 <body data-spy="scroll" data-target=".side_menu" data-offset="90">
 
 
@@ -117,5 +119,6 @@
 <!--Scroll Top Start-->
 <span class="scroll-top-arrow"><i class="fas fa-angle-up"></i></span>
 <!--Scroll Top End-->
+ @livewireScripts
 </body>
 </html>
