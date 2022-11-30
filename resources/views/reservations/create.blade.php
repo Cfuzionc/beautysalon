@@ -9,5 +9,6 @@
        @livewire("make-reservation-component")
     </div>
 </div>
+
 @endsection
 

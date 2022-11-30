@@ -41,7 +41,13 @@ class ReservationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        reservation::create([
+            "begin" => $request->input('begin'),
+            "date" => $request->input('date'),
+            "end" => $request->input('end'),
+            "preffered_employee" => $request->input('preffered_employee')
+        ]);
+        return redirect('reservation/');
     }
 
     /**
@@ -52,6 +58,7 @@ class ReservationController extends Controller
      */
     public function show($id)
     {
+        $reservation = Reservation::findOrFail($id);
         return view('reservations.show');
     }
 
@@ -86,6 +93,8 @@ class ReservationController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $tickets = Reservation::findOrFail($id);
+        $tickets->delete();
+        return back();;
     }
 }
