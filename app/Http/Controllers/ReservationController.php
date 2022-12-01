@@ -55,9 +55,6 @@ class ReservationController extends Controller
         ]);
         dd('test');
 
-
-
-        return redirect()->back();
     }
 
     /**
@@ -68,6 +65,7 @@ class ReservationController extends Controller
      */
     public function show($id)
     {
+        $reservation = Reservation::findOrFail($id);
         return view('reservations.show');
     }
 
@@ -102,6 +100,8 @@ class ReservationController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $tickets = Reservation::findOrFail($id);
+        $tickets->delete();
+        return back();;
     }
 }
