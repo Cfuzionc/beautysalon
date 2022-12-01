@@ -6,6 +6,7 @@ return [
         'appointmenttime' => 30,
         'begin' => '08:30',
         'end' => '17:30'
+
     ],
     'employees' => [
         'John Doe1',

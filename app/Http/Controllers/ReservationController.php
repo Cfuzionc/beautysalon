@@ -2,12 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\Reservation;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Validator;
+use Symfony\Component\Console\Input\Input;
 use Label84\HoursHelper\Facades\HoursHelper;
 
 class ReservationController extends Controller
 {
+
+
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +21,7 @@ class ReservationController extends Controller
      */
     public function index()
     {
-        //
+        return view('reservation.index');
     }
 
     /**
@@ -25,9 +31,9 @@ class ReservationController extends Controller
      */
     public function create()
     {
+        $this->middleware(['auth']);
 
         $hours = HoursHelper::create(config('reservation.workhours.begin'), config('reservation.workhours.end'), config('reservation.workhours.appointmenttime'));
-
         $reservations = Reservation::where('date', '>=', now())->get();
         // dd($hours, $reservations);
         return view('reservations.create');
@@ -41,7 +47,17 @@ class ReservationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->middleware(['auth']);
+
+        $request->validate([
+            "start_date" => ['string', 'required'],
+            "start_time" => ['string', 'required']
+        ]);
+        dd('test');
+
+
+
+        return redirect()->back();
     }
 
     /**
