@@ -12,10 +12,18 @@
             <!--Nav Links-->
             <div class="collapse navbar-collapse" id="Test">
                 <div class="navbar-nav ml-auto">
-                    <a class="nav-link active" href="/">Home</a>
-                    <a class="nav-link" href="/">About</a>
-                    <a class="nav-link" href="/">Reservate</a>
-                    <a class="nav-link" href="/">Contact</a>
+                    <a class="nav-link active" style="margin-left: 15px;" href="/">Home</a>
+                    <a class="nav-link" style="margin-left: 15px;" href="/">About</a>
+                    <a class="nav-link" style="margin-left: 15px;" href="/">Reservate</a>
+                    <a class="nav-link" style="margin-left: 15px;" href="/">Contact</a>
+                    @if (!auth()->user())
+                        <a href="{{ route('login') }}" style="margin-left: 100px;" class="btn btn-primary">Log
+                            in</a>
+                    @else
+                        <a class="nav-link" href="{{ route('dashboard') }}" style="margin-left: 15px;"
+                            href="/">Dashboard</a>
+                        <a href="{{ route('logout') }}" style="margin-left: 100px;" class="btn btn-danger">Log out</a>
+                    @endif
                 </div>
             </div>
 
@@ -52,8 +60,10 @@
 
             <div class="side-footer w-100">
                 <ul class="social-icons-simple">
-                    <li><a class="facebook-text-hvr" href="javascript:void(0)"><i class="fab fa-facebook-f"></i> </a> </li>
-                    <li><a class="instagram-text-hvr" href="javascript:void(0)"><i class="fab fa-instagram"></i> </a> </li>
+                    <li><a class="facebook-text-hvr" href="javascript:void(0)"><i class="fab fa-facebook-f"></i> </a>
+                    </li>
+                    <li><a class="instagram-text-hvr" href="javascript:void(0)"><i class="fab fa-instagram"></i> </a>
+                    </li>
                     <li><a class="twitter-text-hvr" href="javascript:void(0)"><i class="fab fa-twitter"></i> </a> </li>
                 </ul>
                 <p>&copy; Test</p>
