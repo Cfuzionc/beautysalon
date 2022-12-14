@@ -3915,13 +3915,13 @@ fieldset:disabled .btn {
 
 .btn-danger {
   color: #000;
-  background-color: #F44335;
-  border-color: #F44335;
+  background-color: #f55649;
+  border-color: #f55649;
 }
 
 .btn-danger:hover {
   color: #000;
-  background-color: #f65f53;
+  background-color: #f55649;
   border-color: #f55649;
 }
 

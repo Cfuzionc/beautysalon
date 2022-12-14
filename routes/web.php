@@ -23,13 +23,14 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('reservation', App\Http\Controllers\ReservationController::class);
+Route::resource('user', App\Http\Controllers\UserController::class);
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
 
-
+Route::get('/user-management', [UserController::class, 'index'])->name('user-management');
 Route::get('/', function () {return redirect('login');})->middleware('guest');
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth')->name('dashboard');
 Route::get('sign-up', [RegisterController::class, 'create'])->middleware('guest')->name('register');

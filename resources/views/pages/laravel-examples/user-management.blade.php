@@ -13,10 +13,10 @@
                             <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
                                 <h6 class="text-white mx-3"><strong> Add, Edit, Delete features are not
                                         functional!</strong> This is a<strong> PRO</strong> feature! Click
-                                    <strong><a
-                                            href="https://www.creative-tim.com/product/material-dashboard-pro-laravel"
+                                    <strong><a href="https://www.creative-tim.com/product/material-dashboard-pro-laravel"
                                             target="_blank" class="text-white"><u>here</u> </a></strong>to see
-                                    the PRO product!</h6>
+                                    the PRO product!
+                                </h6>
                             </div>
                         </div>
                         <div class=" me-3 my-3 text-end">
@@ -65,11 +65,14 @@
                                                 <div class="d-flex px-2 py-1">
                                                     <div>
                                                         <img src="{{ asset('assets') }}/img/team-2.jpg"
-                                                            class="avatar avatar-sm me-3 border-radius-lg" alt="user1">
+                                                            class="avatar avatar-sm me-3 border-radius-lg"
+                                                            alt="user1">
                                                     </div>
 
                                                 </div>
                                             </td>
+
+                                            {{ $users }}
                                             <td>
                                                 <div class="d-flex flex-column justify-content-center">
                                                     <h6 class="mb-0 text-sm">John</h6>
@@ -87,20 +90,21 @@
                                                 <span class="text-secondary text-xs font-weight-bold">22/03/18</span>
                                             </td>
                                             <td class="align-middle">
-                                                <a rel="tooltip" class="btn btn-success btn-link"
-                                                    href="" data-original-title=""
-                                                    title="">
+                                                <a rel="tooltip" class="btn btn-success btn-link" href=""
+                                                    data-original-title="" title="">
                                                     <i class="material-icons">edit</i>
                                                     <div class="ripple-container"></div>
                                                 </a>
-                                                
+
                                                 <button type="button" class="btn btn-danger btn-link"
-                                                data-original-title="" title="">
-                                                <i class="material-icons">close</i>
-                                                <div class="ripple-container"></div>
-                                            </button>
+                                                    data-original-title="" title="">
+                                                    <i class="material-icons">close</i>
+                                                    <div class="ripple-container"></div>
+                                                </button>
                                             </td>
                                         </tr>
+
+
                                         <tr>
                                             <td>
                                                 <div class="d-flex px-2 py-1">
@@ -113,7 +117,8 @@
                                                 <div class="d-flex px-2 py-1">
                                                     <div>
                                                         <img src="{{ asset('assets') }}/img/team-3.jpg"
-                                                            class="avatar avatar-sm me-3 border-radius-lg" alt="user2">
+                                                            class="avatar avatar-sm me-3 border-radius-lg"
+                                                            alt="user2">
                                                     </div>
 
                                                 </div>
@@ -135,13 +140,12 @@
                                                 <span class="text-secondary text-xs font-weight-bold">16/06/18</span>
                                             </td>
                                             <td class="align-middle">
-                                                <a rel="tooltip" class="btn btn-success btn-link"
-                                                href="" data-original-title=""
-                                                title="">
-                                                <i class="material-icons">edit</i>
-                                                <div class="ripple-container"></div>
-                                            </a>
-                                             <button type="button" class="btn btn-danger btn-link"
+                                                <a rel="tooltip" class="btn btn-success btn-link" href=""
+                                                    data-original-title="" title="">
+                                                    <i class="material-icons">edit</i>
+                                                    <div class="ripple-container"></div>
+                                                </a>
+                                                <button type="button" class="btn btn-danger btn-link"
                                                     data-original-title="" title="">
                                                     <i class="material-icons">close</i>
                                                     <div class="ripple-container"></div>
@@ -160,7 +164,8 @@
                                                 <div class="d-flex px-2 py-1">
                                                     <div>
                                                         <img src="{{ asset('assets') }}/img/team-4.jpg"
-                                                            class="avatar avatar-sm me-3 border-radius-lg" alt="user3">
+                                                            class="avatar avatar-sm me-3 border-radius-lg"
+                                                            alt="user3">
                                                     </div>
 
                                                 </div>
@@ -182,17 +187,16 @@
                                                 <span class="text-secondary text-xs font-weight-bold">30/06/18</span>
                                             </td>
                                             <td class="align-middle">
-                                                <a rel="tooltip" class="btn btn-success btn-link"
-                                                    href="" data-original-title=""
-                                                    title="">
+                                                <a rel="tooltip" class="btn btn-success btn-link" href=""
+                                                    data-original-title="" title="">
                                                     <i class="material-icons">edit</i>
                                                     <div class="ripple-container"></div>
                                                 </a>
                                                 <button type="button" class="btn btn-danger btn-link"
-                                                data-original-title="" title="">
-                                                <i class="material-icons">close</i>
-                                                <div class="ripple-container"></div>
-                                            </button>
+                                                    data-original-title="" title="">
+                                                    <i class="material-icons">close</i>
+                                                    <div class="ripple-container"></div>
+                                                </button>
                                             </td>
                                         </tr>
                                         <tr>
@@ -207,7 +211,8 @@
                                                 <div class="d-flex px-2 py-1">
                                                     <div>
                                                         <img src="{{ asset('assets') }}/img/team-3.jpg"
-                                                            class="avatar avatar-sm me-3 border-radius-lg" alt="user4">
+                                                            class="avatar avatar-sm me-3 border-radius-lg"
+                                                            alt="user4">
                                                     </div>
 
                                                 </div>
@@ -228,17 +233,16 @@
                                                 <span class="text-secondary text-xs font-weight-bold">16/06/19</span>
                                             </td>
                                             <td class="align-middle">
-                                                <a rel="tooltip" class="btn btn-success btn-link"
-                                                    href="" data-original-title=""
-                                                    title="">
+                                                <a rel="tooltip" class="btn btn-success btn-link" href=""
+                                                    data-original-title="" title="">
                                                     <i class="material-icons">edit</i>
                                                     <div class="ripple-container"></div>
                                                 </a>
                                                 <button type="button" class="btn btn-danger btn-link"
-                                                data-original-title="" title="">
-                                                <i class="material-icons">close</i>
-                                                <div class="ripple-container"></div>
-                                            </button>
+                                                    data-original-title="" title="">
+                                                    <i class="material-icons">close</i>
+                                                    <div class="ripple-container"></div>
+                                                </button>
                                             </td>
                                         </tr>
                                         <tr>
@@ -253,7 +257,8 @@
                                                 <div class="d-flex px-2 py-1">
                                                     <div>
                                                         <img src="{{ asset('assets') }}/img/team-2.jpg"
-                                                            class="avatar avatar-sm me-3 border-radius-lg" alt="user5">
+                                                            class="avatar avatar-sm me-3 border-radius-lg"
+                                                            alt="user5">
                                                     </div>
 
                                                 </div>
@@ -274,17 +279,16 @@
                                                 <span class="text-secondary text-xs font-weight-bold">16/06/18</span>
                                             </td>
                                             <td class="align-middle">
-                                                <a rel="tooltip" class="btn btn-success btn-link"
-                                                    href="" data-original-title=""
-                                                    title="">
+                                                <a rel="tooltip" class="btn btn-success btn-link" href=""
+                                                    data-original-title="" title="">
                                                     <i class="material-icons">edit</i>
                                                     <div class="ripple-container"></div>
                                                 </a>
                                                 <button type="button" class="btn btn-danger btn-link"
-                                                data-original-title="" title="">
-                                                <i class="material-icons">close</i>
-                                                <div class="ripple-container"></div>
-                                            </button>
+                                                    data-original-title="" title="">
+                                                    <i class="material-icons">close</i>
+                                                    <div class="ripple-container"></div>
+                                                </button>
                                             </td>
                                         </tr>
                                         <tr>
@@ -299,7 +303,8 @@
                                                 <div class="d-flex px-2 py-1">
                                                     <div>
                                                         <img src="{{ asset('assets') }}/img/team-4.jpg"
-                                                            class="avatar avatar-sm me-3 border-radius-lg" alt="user6">
+                                                            class="avatar avatar-sm me-3 border-radius-lg"
+                                                            alt="user6">
                                                     </div>
                                                 </div>
                                             </td>
@@ -319,9 +324,8 @@
                                                 <span class="text-secondary text-xs font-weight-bold">26/06/18</span>
                                             </td>
                                             <td class="align-middle">
-                                                <a rel="tooltip" class="btn btn-success btn-link"
-                                                    href="" data-original-title=""
-                                                    title="">
+                                                <a rel="tooltip" class="btn btn-success btn-link" href=""
+                                                    data-original-title="" title="">
                                                     <i class="material-icons">edit</i>
                                                     <div class="ripple-container"></div>
                                                 </a>

@@ -1,14 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="card">
-    <div class="card-header">
-        Reserveer
+    <div class="card">
+        <div class="card-header">
+            Reserveer
+        </div>
+        <div class="card-body">
+            @livewire('make-reservation-component')
+        </div>
     </div>
-    <div class="card-body">
-       @livewire("make-reservation-component")
-    </div>
-</div>
-
 @endsection
-
