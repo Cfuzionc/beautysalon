@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\SessionsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,40 +17,23 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
  */
-
-Route::get('/', function ()
-{
-    return view('layouts.app');
-});
-
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('reservation', App\Http\Controllers\ReservationController::class);
-Route::resource('user', App\Http\Controllers\UserController::class);
 
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\SessionsController;
+Route::prefix('admin')->name('admin.')->middleware(['can:access admin'])->group(function () {
+	Route::controller(App\Http\Controllers\UserController::class)->middleware('auth')->name('users.')->prefix('users')->group(function () {
+		Route::get('', 'index')->name('index');
+		Route::get('{id}', 'show')->name('show');
+	});
 
-Route::get('/user-management', [UserController::class, 'index'])->name('user-management');
+	Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth')->name('dashboard');
+});
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 Route::get('/', function () {return redirect('login');})->middleware('guest');
-Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth')->name('dashboard');
-Route::get('sign-up', [RegisterController::class, 'create'])->middleware('guest')->name('register');
-Route::post('sign-up', [RegisterController::class, 'store'])->middleware('guest');
-Route::get('sign-in', [SessionsController::class, 'create'])->middleware('guest')->name('login');
-Route::post('sign-in', [SessionsController::class, 'store'])->middleware('guest');
-Route::post('verify', [SessionsController::class, 'show'])->middleware('guest');
-Route::post('reset-password', [SessionsController::class, 'update'])->middleware('guest')->name('password.update');
-Route::get('verify', function () {
-	return view('sessions.password.verify');
-})->middleware('guest')->name('verify');
-Route::get('/reset-password/{token}', function ($token) {
-	return view('sessions.password.reset', ['token' => $token]);
-})->middleware('guest')->name('password.reset');
 
-Route::get('sign-out', [SessionsController::class, 'destroy'])->middleware('auth')->name('logout');
 Route::get('profile', [ProfileController::class, 'create'])->middleware('auth')->name('profile');
 Route::post('user-profile', [ProfileController::class, 'update'])->middleware('auth');
 Route::group(['middleware' => 'auth'], function () {
@@ -71,9 +58,6 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('static-sign-up', function () {
 		return view('pages.static-sign-up');
 	})->name('static-sign-up');
-	Route::get('user-management', function () {
-		return view('pages.laravel-examples.user-management');
-	})->name('user-management');
 	Route::get('user-profile', function () {
 		return view('pages.laravel-examples.user-profile');
 	})->name('user-profile');

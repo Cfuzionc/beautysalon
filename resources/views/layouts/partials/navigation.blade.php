@@ -16,14 +16,17 @@
                     <a class="nav-link" style="margin-left: 15px;" href="/">About</a>
                     <a class="nav-link" style="margin-left: 15px;" href="/">Reservate</a>
                     <a class="nav-link" style="margin-left: 15px;" href="/">Contact</a>
-                    @if (!auth()->user())
+                    @auth
+                        <a class="nav-link" href="{{ route('admin.dashboard') }}" style="margin-left: 15px;"
+                            href="/">Dashboard</a>
+                        <form class="nav-link" method="POST" action="{{ route('logout') }}" id="logout-form">
+                            @csrf
+                            <button class="btn btn-danger" style="margin-left: 15px" type="submit">Logout</button>
+                        </form>
+                    @else
                         <a href="{{ route('login') }}" style="margin-left: 100px;" class="btn btn-primary">Log
                             in</a>
-                    @else
-                        <a class="nav-link" href="{{ route('dashboard') }}" style="margin-left: 15px;"
-                            href="/">Dashboard</a>
-                        <a href="{{ route('logout') }}" style="margin-left: 100px;" class="btn btn-danger">Log out</a>
-                    @endif
+                    @endauth
                 </div>
             </div>
 
