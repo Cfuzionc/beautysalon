@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Database\Seeders\RolesAndPermissionSeeder;
+use App\Models\User;
+
 
 class DatabaseSeeder extends Seeder
 {
@@ -16,8 +16,8 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
-            RolesAndPermissionsSeeder::class,
-            ReservationSeeder::class
+            RolesAndPermissionsSeeder::class
         ]);
+
     }
 }

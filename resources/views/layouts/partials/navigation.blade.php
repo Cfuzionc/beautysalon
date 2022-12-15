@@ -12,10 +12,21 @@
             <!--Nav Links-->
             <div class="collapse navbar-collapse" id="Test">
                 <div class="navbar-nav ml-auto">
-                    <a class="nav-link active" href="/">Home</a>
-                    <a class="nav-link" href="/">About</a>
-                    <a class="nav-link" href="/">Reservate</a>
-                    <a class="nav-link" href="/">Contact</a>
+                    <a class="nav-link active" style="margin-left: 15px;" href="/">Home</a>
+                    <a class="nav-link" style="margin-left: 15px;" href="/">About</a>
+                    <a class="nav-link" style="margin-left: 15px;" href="/">Reservate</a>
+                    <a class="nav-link" style="margin-left: 15px;" href="/">Contact</a>
+                    @auth
+                        <a class="nav-link" href="{{ route('admin.dashboard') }}" style="margin-left: 15px;"
+                            href="/">Dashboard</a>
+                        <form class="nav-link" method="POST" action="{{ route('logout') }}" id="logout-form">
+                            @csrf
+                            <button class="btn btn-danger" style="margin-left: 15px" type="submit">Logout</button>
+                        </form>
+                    @else
+                        <a href="{{ route('login') }}" style="margin-left: 100px;" class="btn btn-primary">Log
+                            in</a>
+                    @endauth
                 </div>
             </div>
 
@@ -52,8 +63,10 @@
 
             <div class="side-footer w-100">
                 <ul class="social-icons-simple">
-                    <li><a class="facebook-text-hvr" href="javascript:void(0)"><i class="fab fa-facebook-f"></i> </a> </li>
-                    <li><a class="instagram-text-hvr" href="javascript:void(0)"><i class="fab fa-instagram"></i> </a> </li>
+                    <li><a class="facebook-text-hvr" href="javascript:void(0)"><i class="fab fa-facebook-f"></i> </a>
+                    </li>
+                    <li><a class="instagram-text-hvr" href="javascript:void(0)"><i class="fab fa-instagram"></i> </a>
+                    </li>
                     <li><a class="twitter-text-hvr" href="javascript:void(0)"><i class="fab fa-twitter"></i> </a> </li>
                 </ul>
                 <p>&copy; Test</p>
