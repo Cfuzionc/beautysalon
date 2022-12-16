@@ -45,29 +45,19 @@
                                 </div>
                             </div>
                             <div class="card-body">
-                                <form role="form" method="POST" action="{{ route('login') }}" class="text-start">
+
+                                <form method="POST" action="{{ route('login') }}">
                                     @csrf
-                                    @if (Session::has('status'))
-                                        <div class="alert alert-success alert-dismissible text-white" role="alert">
-                                            <span class="text-sm">{{ Session::get('status') }}</span>
-                                            <button type="button" class="btn-close text-lg py-3 opacity-10"
-                                                data-bs-dismiss="alert" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                    @endif
                                     <div class="input-group input-group-outline mt-3">
                                         <label class="form-label">Email</label>
-                                        <input type="email" class="form-control" name="email"
-                                            value="{{ 'admin@material.com' }}">
+                                        <input type="email" class="form-control" name="email">
                                     </div>
                                     @error('email')
                                         <p class='text-danger inputerror'>{{ $message }} </p>
                                     @enderror
                                     <div class="input-group input-group-outline mt-3">
                                         <label class="form-label">Password</label>
-                                        <input type="password" class="form-control" name="password"
-                                            value='{{ 'secret' }}'>
+                                        <input type="password" class="form-control" name="password">
                                     </div>
                                     @error('password')
                                         <p class='text-danger inputerror'>{{ $message }} </p>
@@ -78,12 +68,12 @@
                                             me</label>
                                     </div>
                                     <div class="text-center">
-                                        <button type="submit"
+                                        <button type="submit" {{ __('login') }}
                                             class="shadow-primary bg-gradient-primary btn w-100 my-4 mb-2">Sign
                                             in</button>
                                     </div>
                                     <p class="mt-4 text-sm text-center">
-                                        Don't have an account?
+                                        Dont have an account?
                                         <a href="{{ route('register') }}"
                                             class="text-primary text-gradient font-weight-bold">Sign up</a>
                                     </p>
@@ -93,6 +83,7 @@
                                             class="text-primary text-gradient font-weight-bold">here</a>
                                     </p>
                                 </form>
+
                             </div>
                         </div>
                     </div>
