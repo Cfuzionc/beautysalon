@@ -1,1 +1,1 @@
-@props(['signin', 'signup'])
+@props(['login', 'register'])
