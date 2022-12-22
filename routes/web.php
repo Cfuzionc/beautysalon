@@ -25,6 +25,7 @@ Route::prefix('admin')->name('admin.')->middleware(['can:access admin'])->group(
 	Route::controller(App\Http\Controllers\UserController::class)->middleware('auth')->name('users.')->prefix('users')->group(function () {
 		Route::get('', 'index')->name('index');
 		Route::get('{id}', 'show')->name('show');
+        Route::post('edit/{id}', 'update')->name('update');
 	});
 
 	Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth')->name('dashboard');

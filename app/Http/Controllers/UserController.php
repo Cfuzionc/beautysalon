@@ -58,7 +58,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+
     }
 
     /**
@@ -70,7 +70,8 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $users = User::findOrFail($id);
+        return view('pages.users.edit', compact('users'));
     }
 
     /**
