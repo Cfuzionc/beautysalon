@@ -86,26 +86,26 @@
                                                         class="text-secondary text-xs font-weight-bold">{{ $user->created_at }}</span>
                                                 </td>
                                                 <td class="align-middle">
-                                                    @foreach ($users as $user)
-                                                        <form class="nav-link" method="POST"
-                                                            action="{{ route('admin.users.update', $user->id) }}"
-                                                            id="">
-                                                            @csrf
-                                                            <button class="btn btn-danger" style="margin-left: 15px"
-                                                                type="submit">Edit</button>
-                                                        </form>
-                                                    @endforeach
-                                                    <a rel="tooltip" class="btn btn-success btn-link" href=""
-                                                        data-original-title="" title="">
-                                                        <i class="material-icons">edit</i>
-                                                        <div class="ripple-container"></div>
+                                                    <a class="button-link"
+                                                        href="{{ route('admin.users.edit', $user->id) }}">
+                                                        <button class="btn btn-success btn-link"
+                                                            style="margin-left: 15px" type="button"> <i
+                                                                class="material-icons">edit</i>
+                                                            <div class="ripple-container"></div>
+                                                        </button>
                                                     </a>
 
-                                                    <button type="button" class="btn btn-danger btn-link"
-                                                        data-original-title="" title="">
-                                                        <i class="material-icons">close</i>
-                                                        <div class="ripple-container"></div>
-                                                    </button>
+                                                    <form class="nav_link" method="POST"
+                                                        action="{{ route('admin.users.destroy', $user->id) }}"
+                                                        id="">
+                                                        @method('DELETE')
+                                                        @csrf
+                                                        <button class="btn btn-danger btn-link"
+                                                            style="margin-left: 30px" type="submit">
+                                                            <i class="material-icons">close</i>
+                                                            <div class="ripple-container"></div>
+                                                        </button>
+                                                    </form>
                                                 </td>
                                             </tr>
                                     @endforeach

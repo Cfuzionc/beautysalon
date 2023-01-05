@@ -24,8 +24,10 @@ Route::resource('reservation', App\Http\Controllers\ReservationController::class
 Route::prefix('admin')->name('admin.')->middleware(['can:access admin'])->group(function () {
 	Route::controller(App\Http\Controllers\UserController::class)->middleware('auth')->name('users.')->prefix('users')->group(function () {
 		Route::get('', 'index')->name('index');
+		Route::get('edit/{user}', 'edit')->name('edit');
 		Route::get('{id}', 'show')->name('show');
-        Route::post('edit/{id}', 'update')->name('update');
+        Route::post('update/{user}', 'update')->name('update');
+        Route::delete('delete/{user}', 'destroy')->name('destroy');
 	});
 
 	Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth')->name('dashboard');

@@ -21,10 +21,10 @@
                     <div class="col-auto my-auto">
                         <div class="h-100">
                             <h5 class="mb-1">
-                                {{ auth()->user()->name }}
+                                {{ $user->name }}
                             </h5>
-                            <p class="mb-0 font-weight-normal text-sm">
-                                CEO / Co-Founder
+                            <p class="mb-0 font-weight-normal text-sm">ID:
+                                {{ $user->id }}
                             </p>
                         </div>
                     </div>
@@ -87,14 +87,14 @@
                                 </div>
                             </div>
                         @endif
-                        <form method='POST' action='{{ route('user-profile') }}'>
+                        <form method='POST' action='{{ route('admin.users.update', $user->id) }}'>
                             @csrf
                             <div class="row">
 
                                 <div class="mb-3 col-md-6">
                                     <label class="form-label">Email address</label>
                                     <input type="email" name="email" class="form-control border border-2 p-2"
-                                        value='{{ old('email', auth()->user()->email) }}'>
+                                        value='{{ $user->email }}'>
                                     @error('email')
                                         <p class='text-danger inputerror'>{{ $message }} </p>
                                     @enderror
@@ -103,7 +103,7 @@
                                 <div class="mb-3 col-md-6">
                                     <label class="form-label">Name</label>
                                     <input type="text" name="name" class="form-control border border-2 p-2"
-                                        value='{{ old('name', auth()->user()->name) }}'>
+                                        value='{{ $user->name }}'>
                                     @error('name')
                                         <p class='text-danger inputerror'>{{ $message }} </p>
                                     @enderror
@@ -112,7 +112,7 @@
                                 <div class="mb-3 col-md-6">
                                     <label class="form-label">Phone</label>
                                     <input type="number" name="phone" class="form-control border border-2 p-2"
-                                        value='{{ old('phone', auth()->user()->phone) }}'>
+                                        value='{{ $user->phone }}'>
                                     @error('phone')
                                         <p class='text-danger inputerror'>{{ $message }} </p>
                                     @enderror
@@ -121,7 +121,7 @@
                                 <div class="mb-3 col-md-6">
                                     <label class="form-label">Location</label>
                                     <input type="text" name="location" class="form-control border border-2 p-2"
-                                        value='{{ old('location', auth()->user()->location) }}'>
+                                        value='{{ $user->location }}'>
                                     @error('location')
                                         <p class='text-danger inputerror'>{{ $message }} </p>
                                     @enderror
@@ -130,7 +130,7 @@
                                 <div class="mb-3 col-md-12">
                                     <label for="floatingTextarea2">About</label>
                                     <textarea class="form-control border border-2 p-2" placeholder=" Say something about yourself" id="floatingTextarea2"
-                                        name="about" rows="4" cols="50">{{ old('about', auth()->user()->about) }}</textarea>
+                                        name="about" rows="4" cols="50">{{ $user->about }}</textarea>
                                     @error('about')
                                         <p class='text-danger inputerror'>{{ $message }} </p>
                                     @enderror
