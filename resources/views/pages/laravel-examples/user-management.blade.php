@@ -11,12 +11,7 @@
                     <div class="card my-4">
                         <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
                             <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
-                                <h6 class="text-white mx-3"><strong> Add, Edit, Delete features are not
-                                        functional!</strong> This is a<strong> PRO</strong> feature! Click
-                                    <strong><a href="https://www.creative-tim.com/product/material-dashboard-pro-laravel"
-                                            target="_blank" class="text-white"><u>here</u> </a></strong>to see
-                                    the PRO product!
-                                </h6>
+                                <h6 class="text-white mx-3"><strong>User Management</strong></h6>
                             </div>
                         </div>
                         <div class=" me-3 my-3 text-end">
@@ -91,17 +86,26 @@
                                                         class="text-secondary text-xs font-weight-bold">{{ $user->created_at }}</span>
                                                 </td>
                                                 <td class="align-middle">
-                                                    <a rel="tooltip" class="btn btn-success btn-link" href=""
-                                                        data-original-title="" title="">
-                                                        <i class="material-icons">edit</i>
-                                                        <div class="ripple-container"></div>
+                                                    <a class="button-link"
+                                                        href="{{ route('admin.users.edit', $user->id) }}">
+                                                        <button class="btn btn-success btn-link"
+                                                            style="margin-left: 15px; margin-top: 5px;" type="button"> <i
+                                                                class="material-icons">edit</i>
+                                                            <div class="ripple-container"></div>
+                                                        </button>
                                                     </a>
 
-                                                    <button type="button" class="btn btn-danger btn-link"
-                                                        data-original-title="" title="">
-                                                        <i class="material-icons">close</i>
-                                                        <div class="ripple-container"></div>
-                                                    </button>
+                                                    <form class="nav_link" method="POST"
+                                                        action="{{ route('admin.users.destroy', $user->id) }}"
+                                                        id="">
+                                                        @method('DELETE')
+                                                        @csrf
+                                                        <button class="btn btn-danger btn-link"
+                                                            style="margin-left: 15px; margin-top: 5px;" type="submit">
+                                                            <i class="material-icons">close</i>
+                                                            <div class="ripple-container"></div>
+                                                        </button>
+                                                    </form>
                                                 </td>
                                             </tr>
                                     @endforeach

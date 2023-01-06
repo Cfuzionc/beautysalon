@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Reservation;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
@@ -20,11 +21,19 @@ use App\Http\Controllers\SessionsController;
 Auth::routes();
 
 Route::resource('reservation', App\Http\Controllers\ReservationController::class);
+Route::post('/delete-reservation', function (Request $request) {
+    $uuid = request('uuid');
+    Reservation::deleteColumnByUuid($uuid);
+    return redirect()->back()->with('success', 'Column deleted successfully!');
+})->name('delete-reservation');
 
 Route::prefix('admin')->name('admin.')->middleware(['can:access admin'])->group(function () {
 	Route::controller(App\Http\Controllers\UserController::class)->middleware('auth')->name('users.')->prefix('users')->group(function () {
 		Route::get('', 'index')->name('index');
+		Route::get('edit/{user}', 'edit')->name('edit');
 		Route::get('{id}', 'show')->name('show');
+        Route::post('update/{user}', 'update')->name('update');
+        Route::delete('delete/{user}', 'destroy')->name('destroy');
 	});
 
 	Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth')->name('dashboard');
@@ -40,9 +49,6 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('billing', function () {
 		return view('pages.billing');
 	})->name('billing');
-	Route::get('tables', function () {
-		return view('pages.tables');
-	})->name('tables');
 	Route::get('rtl', function () {
 		return view('pages.rtl');
 	})->name('rtl');
