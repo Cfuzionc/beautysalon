@@ -59,7 +59,7 @@ class UserController extends Controller
         return back();
     }
 
-    /**
+    /*
      * Show the form for editing the specified resource.
      *
      * @param User $user

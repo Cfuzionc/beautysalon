@@ -89,7 +89,7 @@
                                                     <a class="button-link"
                                                         href="{{ route('admin.users.edit', $user->id) }}">
                                                         <button class="btn btn-success btn-link"
-                                                            style="margin-left: 15px" type="button"> <i
+                                                            style="margin-left: 15px; margin-top: 5px;" type="button"> <i
                                                                 class="material-icons">edit</i>
                                                             <div class="ripple-container"></div>
                                                         </button>
@@ -101,7 +101,7 @@
                                                         @method('DELETE')
                                                         @csrf
                                                         <button class="btn btn-danger btn-link"
-                                                            style="margin-left: 30px" type="submit">
+                                                            style="margin-left: 15px; margin-top: 5px;" type="submit">
                                                             <i class="material-icons">close</i>
                                                             <div class="ripple-container"></div>
                                                         </button>
