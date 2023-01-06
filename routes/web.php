@@ -21,12 +21,6 @@ use App\Http\Controllers\SessionsController;
 Auth::routes();
 
 Route::resource('reservation', App\Http\Controllers\ReservationController::class);
-// Route::post('/delete-reservation', function (Request $request) {
-//     $uuid = request('uuid');
-//     Reservation::deleteColumnByUuid($uuid);
-
-// })->name('delete-reservation');
-
 Route::prefix('admin')->name('admin.')->middleware(['can:access admin'])->group(function () {
 	Route::controller(App\Http\Controllers\UserController::class)->middleware('auth')->name('users.')->prefix('users')->group(function () {
 		Route::get('', 'index')->name('index');

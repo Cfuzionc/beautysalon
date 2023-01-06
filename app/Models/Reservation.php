@@ -59,12 +59,5 @@ class Reservation extends Model
         return $this->belongsTo(User::class, 'user_id');
     }
 
-    public static function deleteColumnByUuid($uuid)
-    {
-        return DB::table('reservations')
-            ->where('uuid', $uuid)
-            ->delete();
-    }
-
 }
 
