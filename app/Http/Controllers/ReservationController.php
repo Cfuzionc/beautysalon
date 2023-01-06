@@ -27,7 +27,8 @@ class ReservationController extends Controller
      */
     public function index(): Application|Factory|View
     {
-        return view('reservation.index');
+        $reservations = Reservation::all();
+        return view('reservations.index', compact('reservations'));
     }
 
     /**
@@ -104,10 +105,8 @@ class ReservationController extends Controller
      * @param int $id
      * @return RedirectResponse
      */
-    public function destroy(int $id): RedirectResponse
+    public function destroy(Request $request, int $id): void
     {
-        $tickets = Reservation::findOrFail($id);
-        $tickets->delete();
-        return back();
+        //
     }
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Reservation;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
@@ -20,6 +21,11 @@ use App\Http\Controllers\SessionsController;
 Auth::routes();
 
 Route::resource('reservation', App\Http\Controllers\ReservationController::class);
+Route::post('/delete-reservation', function (Request $request) {
+    $uuid = request('uuid');
+    Reservation::deleteColumnByUuid($uuid);
+    return redirect()->back()->with('success', 'Column deleted successfully!');
+})->name('delete-reservation');
 
 Route::prefix('admin')->name('admin.')->middleware(['can:access admin'])->group(function () {
 	Route::controller(App\Http\Controllers\UserController::class)->middleware('auth')->name('users.')->prefix('users')->group(function () {

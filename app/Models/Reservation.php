@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use Carbon\Carbon;
+use DB;
+use Eloquent;
 use Illuminate\Support\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Label84\HoursHelper\Facades\HoursHelper;
@@ -22,7 +24,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  * @property \Illuminate\Support\Carbon|null $deleted_at
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
- * @property-read \App\Models\User $user
+ * @property-read User $user
  * @method static \Database\Factories\ReservationFactory factory(...$parameters)
  * @method static \Illuminate\Database\Eloquent\Builder|Reservation newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Reservation newQuery()
@@ -39,7 +41,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  * @method static \Illuminate\Database\Eloquent\Builder|Reservation whereUuid($value)
  * @method static \Illuminate\Database\Query\Builder|Reservation withTrashed()
  * @method static \Illuminate\Database\Query\Builder|Reservation withoutTrashed()
- * @mixin \Eloquent
+ * @mixin Eloquent
  */
 class Reservation extends Model
 {
@@ -52,9 +54,16 @@ class Reservation extends Model
 
     protected $guarded = [];
     protected $primaryKey = "uuid";
-    public function user()
+    public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public static function deleteColumnByUuid($uuid)
+    {
+        return DB::table('reservations')
+            ->where('uuid', $uuid)
+            ->delete();
     }
 
 }
