@@ -13,6 +13,7 @@ use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Validator;
 use JetBrains\PhpStorm\NoReturn;
+use phpDocumentor\Reflection\Types\String_;
 use Symfony\Component\Console\Input\Input;
 use Label84\HoursHelper\Facades\HoursHelper;
 
@@ -103,10 +104,10 @@ class ReservationController extends Controller
      * Remove the specified resource from storage.
      *
      * @param Request $request
-     * @param int $id
-     * @return void
+     * @param string $id
+     * @return RedirectResponse
      */
-    public function destroy(Request $request, int $id)
+    public function destroy(Request $request, string $id): RedirectResponse
     {
         $reservation = Reservation::findOrFail($id);
 

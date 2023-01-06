@@ -63,7 +63,8 @@
                                                 <span class="text-secondary text-xs font-weight-bold">{{$reservation->created_at}}</span>
                                             </td>
                                             <td class="align-middle">
-                                                <form class="nav-link" method="POST" action="{{ route('delete-reservation')}}">
+                                                <form class="nav-link" method="POST" action="{{ route('reservation.destroy', $reservation->uuid)}}">
+                                                    @method('DELETE')
                                                     @csrf
                                                     <input type="hidden" name="uuid" value="{{$reservation->uuid}}">
                                                     <button class="text-secondary font-weight-bold text-xs"
