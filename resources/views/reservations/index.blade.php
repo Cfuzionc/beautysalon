@@ -45,7 +45,7 @@
                                                     </div>
                                                     <div class="d-flex flex-column justify-content-center">
                                                         <h6 class="mb-0 text-sm">{{$reservation->user->name}}</h6>
-                                                        <p class="text-xs text-secondary mb-0">{{$reservation->user->email}}
+                                                        <p class="text-xs text-secondary mb-0">{{ implode(", ", Auth::user()->roles()->pluck('name')->toArray()) }} <br> {{$reservation->user->email}}
                                                         </p>
                                                     </div>
                                                 </div>
@@ -54,7 +54,7 @@
                                                 <p class="text-xs font-weight-bold mb-0">{{$reservation->preffered_employee}}</p>
                                             </td>
                                             <td>
-                                                <p class="text-xs font-weight-bold mb-0" style="margin-left: 50px">{{$reservation->date}}, {{$reservation->begin}}</p>
+                                                <p class="text-xs font-weight-bold mb-0" style="margin-left: 225px">{{$reservation->date}}, {{$reservation->begin->format("H:i:s")}}</p>
                                             </td>
 {{--                                            <td class="align-middle text-center text-sm">--}}
 {{--                                                <span class="badge badge-sm bg-gradient-success">Online</span>--}}

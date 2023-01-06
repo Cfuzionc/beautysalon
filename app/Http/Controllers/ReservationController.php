@@ -102,8 +102,9 @@ class ReservationController extends Controller
     /**
      * Remove the specified resource from storage.
      *
+     * @param Request $request
      * @param int $id
-     * @return RedirectResponse
+     * @return void
      */
     public function destroy(Request $request, int $id): void
     {
