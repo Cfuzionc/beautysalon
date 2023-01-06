@@ -106,8 +106,12 @@ class ReservationController extends Controller
      * @param int $id
      * @return void
      */
-    public function destroy(Request $request, int $id): void
+    public function destroy(Request $request, int $id)
     {
-        //
+        $reservation = Reservation::findOrFail($id);
+
+        if($reservation->delete()) return redirect()->back()->with('success', 'Column deleted successfully!');
+
+        return redirect()->back()->with('error', "An unexpected error occurred.");
     }
 }
