@@ -22,7 +22,7 @@ class MakeReservationComponent extends Component
         //
     }
 
-    public function render()
+    public function render(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
         $employees = config('reservation.employees', []);
 
